@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Skeleton\Tests;
+namespace LambdaDigamma\MMPlaces\Tests;
 
 class ExampleTest extends TestCase
 {

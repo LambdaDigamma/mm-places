@@ -1,10 +1,10 @@
 <?php
 
-namespace Spatie\Skeleton\Tests;
+namespace LambdaDigamma\MMPlaces\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Spatie\Skeleton\SkeletonServiceProvider;
+use LambdaDigamma\MMPlaces\MMPlacesServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -12,15 +12,17 @@ class TestCase extends Orchestra
     {
         parent::setUp();
 
+        $this->setUpDatabase();
+
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Spatie\\Skeleton\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'LambdaDigamma\\MMPlaces\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
 
     protected function getPackageProviders($app)
     {
         return [
-            SkeletonServiceProvider::class,
+            MMPlacesServiceProvider::class,
         ];
     }
 
@@ -32,10 +34,11 @@ class TestCase extends Orchestra
             'database' => ':memory:',
             'prefix' => '',
         ]);
+    }
 
-        /*
-        include_once __DIR__.'/../database/migrations/create_skeleton_table.php.stub';
-        (new \CreatePackageTable())->up();
-        */
+    protected function setUpDatabase()
+    {
+        include_once __DIR__.'/../database/migrations/create_mm_places_table.php.stub';
+        (new \CreateMMPlacesTable())->up();
     }
 }
