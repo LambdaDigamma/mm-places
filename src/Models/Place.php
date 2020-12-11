@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use LambdaDigamma\MMEvents\Traits\HasPackageFactory;
 use Spatie\Translatable\HasTranslations;
 
-class Place extends Model 
+class Place extends Model
 {
     use SoftDeletes;
     use HasPackageFactory;
@@ -15,5 +15,4 @@ class Place extends Model
 
     protected $table = "mm_places";
     protected $translatable = ['name'];
-
 }

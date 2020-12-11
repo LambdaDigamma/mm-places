@@ -3,8 +3,8 @@
 namespace LambdaDigamma\MMPlaces\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Orchestra\Testbench\TestCase as Orchestra;
 use LambdaDigamma\MMPlaces\MMPlacesServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
