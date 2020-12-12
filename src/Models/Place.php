@@ -20,7 +20,7 @@ class Place extends Model
     protected $dates = ['validated_at'];
     protected $casts = [
         'tags' => 'array',
-        'extras' => 'array'
+        'extras' => 'array',
     ];
 
     public function scopeFilter($query, array $filters)
