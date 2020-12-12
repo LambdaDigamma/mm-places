@@ -11,12 +11,12 @@
         {
             "name": "Lennart Fischer",
             "email": "github@lambdadigamma.com",
-            "homepage": "https://spatie.be",
+            "homepage": "https://lambdadigamma.com",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^7.4|^8.0",
+        "php": "^7.4",
         "illuminate/contracts": "^8.0",
         "spatie/laravel-translatable": "^4.6"
     },
@@ -55,15 +55,5 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true,
-    "funding": [
-        {
-            "type": "github",
-            "url": "https://github.com/sponsors/spatie"
-        },
-        {
-            "type": "other",
-            "url": "https://spatie.be/open-source/support-us"
-        }
-    ]
+    "prefer-stable": true
 }
