@@ -13,6 +13,7 @@ class PlaceFactory extends Factory
     {
         return [
             'name' => $this->faker->words(2, true),
+            'country_code' => 'DE',
         ];
     }
 }

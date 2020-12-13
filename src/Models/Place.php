@@ -2,9 +2,10 @@
 
 namespace LambdaDigamma\MMPlaces\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use LambdaDigamma\MMEvents\Traits\HasPackageFactory;
+use LambdaDigamma\MMPlaces\Database\Factories\PlaceFactory;
 use LambdaDigamma\MMPlaces\Traits\SerializeTranslations;
 use Spatie\Translatable\HasTranslations;
 
@@ -12,7 +13,7 @@ class Place extends Model
 {
     use SoftDeletes;
     use SerializeTranslations;
-    use HasPackageFactory;
+    use HasFactory;
     use HasTranslations;
 
     protected $table = "mm_places";
@@ -35,6 +36,11 @@ class Place extends Model
                 $query->onlyTrashed();
             }
         });
+    }
+
+    protected static function newFactory()
+    {
+        return PlaceFactory::new();
     }
 
     public function scopeValidated($query)
