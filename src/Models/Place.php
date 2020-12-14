@@ -17,6 +17,7 @@ class Place extends Model
     use HasTranslations;
 
     protected $table = "mm_places";
+    protected $guarded = ['*', 'id'];
     protected $translatable = ['name', 'tags'];
     protected $dates = ['validated_at'];
     protected $casts = [
