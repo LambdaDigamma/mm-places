@@ -64,7 +64,7 @@ class MMPlacesServiceProvider extends ServiceProvider
         Route::group([
             'prefix' => config('mm-places.admin_prefix', 'admin'),
             'as' => config('mm-places.admin_as', 'admin.'),
-            'middleware' => config('mm-places.admin_middleware', ['web', 'auth'])
+            'middleware' => config('mm-places.admin_middleware', ['web', 'auth']),
         ], function () {
             $this->loadRoutesFrom(__DIR__ . '/../routes/admin.php');
         });

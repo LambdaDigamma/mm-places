@@ -8,7 +8,6 @@ use LambdaDigamma\MMPlaces\Models\Place;
 
 class PlaceController extends Controller
 {
-
     public function update(UpdateGeneralPlace $request, Place $place)
     {
         $place->update($request->validated());
@@ -17,5 +16,4 @@ class PlaceController extends Controller
                 ? new JsonResponse('', 200)
                 : back()->with('success', 'Die Daten wurden gespeichert.');
     }
-
 }
