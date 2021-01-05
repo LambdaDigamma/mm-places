@@ -2,8 +2,10 @@
 
 namespace LambdaDigamma\MMPlaces;
 
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use LambdaDigamma\MMPlaces\Commands\MMPlacesCommand;
+use LambdaDigamma\MMPlaces\Models\Place;
 
 class MMPlacesServiceProvider extends ServiceProvider
 {
@@ -31,6 +33,7 @@ class MMPlacesServiceProvider extends ServiceProvider
         }
 
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'mm-places');
+        $this->registerRoutes();
     }
 
     public function register()
@@ -48,5 +51,22 @@ class MMPlacesServiceProvider extends ServiceProvider
         }
 
         return false;
+    }
+
+    protected function registerRoutes()
+    {
+        Route::bind('anyplace', function ($id) {
+            return Place::query()
+                ->withTrashed()
+                ->findOrFail($id);
+        });
+
+        Route::group([
+            'prefix' => config('mm-places.admin_prefix', 'admin'),
+            'as' => config('mm-places.admin_as', 'admin.'),
+            'middleware' => config('mm-places.admin_middleware', ['web', 'auth'])
+        ], function () {
+            $this->loadRoutesFrom(__DIR__ . '/../routes/admin.php');
+        });
     }
 }
