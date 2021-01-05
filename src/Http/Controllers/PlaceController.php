@@ -1,6 +1,6 @@
 <?php
 
-namespace LambdaDigamma\MMPlaces\Controllers;
+namespace LambdaDigamma\MMPlaces\Http\Controllers;
 
 use Illuminate\Http\JsonResponse;
 use LambdaDigamma\MMPlaces\Http\Requests\UpdateGeneralPlace;

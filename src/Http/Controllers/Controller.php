@@ -1,6 +1,6 @@
 <?php
 
-namespace LambdaDigamma\MMPlaces\Controllers;
+namespace LambdaDigamma\MMPlaces\Http\Controllers;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
