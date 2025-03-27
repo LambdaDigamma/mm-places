@@ -19,10 +19,10 @@ class Place extends Model
     protected $table = "mm_places";
     protected $guarded = ['*', 'id'];
     protected $translatable = ['name', 'tags'];
-    protected $dates = ['validated_at'];
     protected $casts = [
         'tags' => 'array',
         'extras' => 'array',
+        'validated_at' => 'datetime',
     ];
 
     public function scopeFilter($query, array $filters)
